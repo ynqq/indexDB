@@ -1,0 +1,94 @@
+* {
+  padding: 0;
+  margin: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.todoListContainer {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.todoListControl {
+  height: 45px;
+  display: flex;
+  align-items: center;
+}
+
+#todoValue {
+  flex: 1;
+  margin-right: 20px;
+  line-height: 30px;
+  border-radius: 4px;
+  border: 1px solid #00baff;
+  padding: 0 10px;
+}
+
+#todoValue:focus,
+#todoValue:focus-visible {
+  border-color: #00baff;
+}
+
+.addBtn {
+  background-color: #00baff;
+  color: #fff;
+  width: 100px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+}
+
+.todoList {
+  margin-top: 15px;
+  border-radius: 4px;
+  overflow-y: auto;
+  max-height: 600px;
+  padding: 10px;
+  border: 1px solid #00baff;
+}
+
+.todoItem {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.todoInfo {
+  flex: 1;
+}
+
+.todoControl {
+  flex: 0 0 80px;
+  display: flex;
+  color: #00baff;
+  align-items: center;
+  justify-content: center;
+  padding-top: 30px;
+}
+
+.todoBtn {
+  cursor: pointer;
+}
+
+.delete {
+  color: red;
+  margin-left: 10px;
+}
+
+.todoTitle {
+  font-weight: bold;
+  line-height: 30px;
+}
+
+.todoText {
+  word-break: break-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-height: 1.6;
+  font-size: 14px;
+}
