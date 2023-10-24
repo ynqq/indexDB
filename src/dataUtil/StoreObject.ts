@@ -9,11 +9,9 @@ export interface IStoreObjectOptions {
 export default class StoreObject<T> {
   private db: IDBDatabase;
   private storeName: string;
-  private options: IStoreObjectOptions;
   constructor(options: IStoreObjectOptions) {
     this.db = options.db;
     this.storeName = options.storeName;
-    this.options = options;
     this.init();
   }
   init() {}
