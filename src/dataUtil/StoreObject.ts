@@ -90,7 +90,7 @@ export default class StoreObject<T> {
       return Promise.reject(ActionRes.noData());
     }
   }
-  delete(id: number) {
+  delete(id: number): Promise<IActionProps<number>> {
     return new Promise(async (resolve, reject) => {
       const res = await this.get(id);
       if (res.code !== 0) {
