@@ -14,14 +14,9 @@ export default class StoreObject<T> {
     this.db = options.db;
     this.storeName = options.storeName;
     this.options = options;
+    this.init();
   }
-  init() {
-    if (!this.db.objectStoreNames.contains(this.storeName)) {
-      this.db.createObjectStore(this.storeName, {
-        keyPath: this.options.keyPath,
-      });
-    }
-  }
+  init() {}
   getName() {
     return this.storeName;
   }

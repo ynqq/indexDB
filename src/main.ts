@@ -1,4 +1,4 @@
-import DataBase from "./dataUtil/DataBase";
+import DataBase, { IDataBaseOptions } from "./dataUtil/DataBase";
 import StoreObject from "./dataUtil/StoreObject";
 import "./style.css";
 
@@ -15,10 +15,7 @@ class Index {
   private db!: IDBDatabase;
   private todoList!: StoreObject<IDataItem>;
   private flag: "add" | "edit" | "delete" = "add";
-  private dbOptions: {
-    name: string;
-    version: number;
-  };
+  private dbOptions: IDataBaseOptions;
   actionId: number;
   constructor() {
     this.flag = "add";
@@ -26,15 +23,17 @@ class Index {
     this.dbOptions = {
       name: "demo",
       version: 1,
+      tableList: {
+        todoList: { storeName: "todoList", keyPath: "id", version: 1 },
+      },
     };
     this.init();
   }
   async init() {
     this.db = await DataBase.getDB(this.dbOptions);
     this.todoList = new StoreObject({
+      ...this.dbOptions.tableList.todoList,
       db: this.db,
-      storeName: "todoList",
-      keyPath: "id",
     });
     this.initPage();
     this.addEvent();
