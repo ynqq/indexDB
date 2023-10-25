@@ -1,0 +1,16 @@
+{
+  "name": "TodoList",
+  "short_name": "Todo--",
+  "url": ".",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "待办事项",
+  "icons": [
+    {
+      "src": "/public/imgs/homescreen192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/indexDB/index.html"
+}

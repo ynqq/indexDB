@@ -1,6 +1,7 @@
 import DataBase, { IDataBaseOptions } from "./dataUtil/DataBase";
 import StoreObject from "./dataUtil/StoreObject";
 import "./style.css";
+import SWIndex from "../public/serviceWorker.js";
 
 interface IDataItem {
   info: string;
@@ -35,8 +36,12 @@ class Index {
       ...this.dbOptions.tableList.todoList,
       db: this.db,
     });
+    this.initSW();
     this.initPage();
     this.addEvent();
+  }
+  initSW() {
+    new SWIndex();
   }
   async initPage() {
     todoListContainer.innerHTML = "";
