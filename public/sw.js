@@ -22,9 +22,11 @@ self.addEventListener("fetch", (e) => {
         return res;
       }
       console.log("refetch", e.request.url);
-      const fetchRes = await fetch(e.request);
-      cache.put(e.request, fetchRes.clone());
-      return fetchRes;
+      if (e.request.url.includes("indexDB")) {
+        const fetchRes = await fetch(e.request);
+        cache.put(e.request, fetchRes.clone());
+        return fetchRes;
+      }
     })()
   );
 });
