@@ -1,5 +1,5 @@
 const CACHE_NAME = "ynqqDemo";
-const CACHE_VER = "0.0.1";
+const CACHE_VER = "0.0.2";
 
 const getCatchName = () => {
   return `${CACHE_NAME}-${CACHE_VER}`;

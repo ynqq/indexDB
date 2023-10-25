@@ -19,6 +19,8 @@ class Index {
   private dbOptions: IDataBaseOptions;
   actionId: number;
   constructor() {
+    console.log("????new----");
+
     this.flag = "add";
     this.actionId = -1;
     this.dbOptions = {
