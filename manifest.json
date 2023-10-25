@@ -7,10 +7,10 @@
   "description": "待办事项",
   "icons": [
     {
-      "src": "/indexDB/imgs/homescreen192.png",
+      "src": "./imgs/homescreen192.png",
       "sizes": "192x192",
       "type": "image/png"
     }
   ],
-  "start_url": "/indexDB/index.html"
+  "start_url": "./index.html"
 }
