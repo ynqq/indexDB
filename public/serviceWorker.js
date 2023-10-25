@@ -9,7 +9,13 @@ export default class SWIndex {
           "/indexDB/sw.js?ver=1",
           { scope: "/indexDB/" }
         );
-        console.log(register, "-00");
+        if (register.installing) {
+          console.log("正在安装");
+        } else if (register.waiting) {
+          console.log("已安装");
+        } else if (register.active) {
+          console.log("激活");
+        }
       } catch (error) {
         console.log(error, "registerError");
       }
